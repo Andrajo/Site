@@ -1,0 +1,66 @@
+@import "main(mediu).css";
+@import "hr.css";
+@import "link_top.css";
+@import "table(mediu).css";
+@import "banner.css";
+@import "menu(mediu).css";
+
+
+/*body*/
+
+:root{
+    --c1:#167A80;
+    --c2:#0B3D40;
+    --c3:#21B7BF;
+    --c4:#23C4CC;
+    --c5:#1C9FA6;
+    --c6:black;
+    --c7:white;
+}
+
+body{
+    background-color: var(--c3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    color: var(--c2);
+}
+
+h1{
+    text-align: left;
+    padding-top: 15%;
+    padding-left: 5%;
+    margin: 0;
+}
+
+#warning, h2{
+    text-align: center;
+}
+
+#warning a{
+    text-decoration: none;
+    color: var(--c1);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.8rem;
+}
+
+
+/*footer*/
+
+footer{
+    margin: 10px;
+}
+
+
+address a{
+    text-decoration: none;
+    color: var(--c2);
+}
+
+.water_mark{
+    display: none;
+}

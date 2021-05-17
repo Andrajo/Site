@@ -1,0 +1,19 @@
+.controls button[data-state="subtitles"] {
+    height:85%;
+    text-indent:0;
+    font-size:1rem;
+    font-weight:bold;
+    color:var(--c2);
+    border-radius:2px;
+}
+
+video{
+    width:40vw;
+}
+
+video::cue{
+    color: var(--c2);
+    background:var(--c7);
+    opacity: 0.3;
+    background-clip: padding-box;
+}

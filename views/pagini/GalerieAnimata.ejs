@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/meta_links.ejs") %>
+    <title>Community Gallery</title>
+    <meta name="keywords" content="Screenshot, Memes, Photo, Community, Poggers">
+    <meta name="description" content="This will be a community gallery, the user will import the in game photos they take of there achievements, questions or maybe just funny moments they want to share with others">
+    <link rel="stylesheet" href="../../temp/galerie-animata.css">
+
+</head>
+<body>
+<%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
+<main>
+    <h2>Gamers Animated</h2>
+    <section class="animated_gallery">
+        <% for (let imag of locals.imagini){%>
+            <figure>
+                <picture>
+                    <source srcset="<%- imag.mic %>" media="(max-width:700px)"/>
+                    <source srcset="<%- imag.mediu %>" media="(max-width:1200px)"/>
+                    <img src=<%- imag.mare %>  alt="<%imag.alt%>" title="<%imag.text_descriere%>">
+                </picture>
+                <figcaption><%- imag.titlu%></figcaption>
+            </figure>
+        <%}%>
+    </section>
+
+</main>
+<%- include("../fragmente/footer.ejs") %>
+<script src="../../resurse/style/main.js"></script>
+</body>
+</html>

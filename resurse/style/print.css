@@ -1,0 +1,102 @@
+@import "main(mic).css";
+
+.water_mark{
+    display:none;
+}
+@media print{
+
+    .water_mark
+    {
+        display: block;
+        position: fixed;
+        bottom:0;
+        color:var(--c2);
+        right:0;
+        padding:5px;
+        width:100px;
+        height:2cm;
+        background: var(--c7);;
+        border:double var(--c6);
+        opacity:0.65;
+    }
+
+    .figura{
+        display:none;
+    }
+    a{
+        text-decoration: none !important;
+        color: var(--c2) !important;
+    }
+    .banner
+    {
+        border: 0.6rem dotted var(--c6) !important;
+        position:absolute !important;
+        height:50px;
+        width: 80%;
+        left:15%; !important;
+        top:0 !important;
+        text-align: center;
+        visibility: visible;
+        animation: none;
+    }
+    .gallery1{
+        display:none;
+    }
+    h1{
+
+        margin-left:43.5% !important;
+        font-size:36px;
+        margin-top:43.5% !important;
+        text-decoration: underline !important;
+        page-break-after: always;
+        color:var(--c6);
+    }
+
+    footer{
+        margin-top:10% !important;
+        page-break-before: always;
+    }
+
+    nav{
+        display:none;
+    }
+    img{
+        display:none;
+    }
+    .section5{
+        display:none;
+    }
+
+    .animated_gallery{
+        display: none;
+    }
+
+    iframe{
+        display:none;
+    }
+
+    video{
+        display: none;
+    }
+
+    .pagebreak{
+        page-break-before: always !important;
+
+    }
+}
+@page {
+    size: A4 portrait;
+    margin-bottom:2cm;
+    margin-top:2cm;
+    counter-increment: page;
+
+}
+@page:left{
+    margin-left:2.5cm;
+    margin-right:0.5cm;
+    border-radius: 20cm;
+}
+@page:right{
+    margin-right:2.5cm;
+    margin-left:0.5cm;
+}

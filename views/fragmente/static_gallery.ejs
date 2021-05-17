@@ -1,0 +1,25 @@
+<section class="gallery_service">
+    <%var how_many_photos=0;%>
+    <h3 class="gallery0">Gallery</h3>
+    <% for (let imag of locals.imagini){
+        const monthNames = ["january", "february", "march", "april", "may", "june",
+            "july", "august", "september", "october", "november", "december"];
+        const data_de_azi = new Date();
+        if(imag.luni.indexOf(monthNames[data_de_azi.getMonth()])!==-1 && how_many_photos<12){
+            if(how_many_photos>0){%>
+                <div class="gallery1" id="spatiu"></div>
+            <%}%>
+            <figure class="gallery1">
+                <a href="/joc">
+                    <picture>
+                        <source srcset="<%- imag.mic %>" media="(max-width:700px)"/>
+                        <source srcset="<%- imag.mediu %>" media="(max-width:1200px)"/>
+                        <img src=<%- imag.mare %> alt="<%imag.alt%>" title="<%imag.text_descriere%>">
+                    </picture>
+                    <figcaption><%-imag.titlu%></figcaption>
+                </a>
+            </figure>
+            <%how_many_photos++;
+        }
+    }%>
+</section>

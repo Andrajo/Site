@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/meta_links.ejs") %>
+    <title>Your account</title>
+    <meta name="keywords" content="your account, your info, your data, your games">
+    <meta name="description" content="This page will showcase your account information">
+</head>
+<body>
+<%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
+<main>
+    <section>
+    <pre>
+
+
+    </pre>
+        <p>Your ip is: <%- locals.ip %></p>
+        <h2>You need to be logged in to you can access this feature</h2>
+        <p>The logg in option is currently unavailable, sorry for the inconvenience</p>
+    </section>
+
+</main>
+<%- include("../fragmente/footer.ejs") %>
+<script src="../../resurse/style/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+/*main*/
+
+main{
+    text-align: left;
+    overflow: auto;
+}
+
+main section{
+    border: hidden;
+}
+
+
+#Sales {grid-area: menu;}
+#warning {grid-area: header;}
+#Most_popular {grid-area: popular;}
+#New_games {grid-area: new;}
+.banner {grid-area: banner}
+.table {grid-area: table}
+.info_explorator {grid-area: date_cont}
+.gallery_servicevice {grid-area: gallery}
+.friends {grid-area: friend}
+.separator {grid-area: separator}
+
+
+main{
+    display: grid;
+    grid-template-areas:
+    'menu'
+    'table '
+    'popular'
+    'new'
+    'friend'
+    'date_cont'
+    'separator'
+    'gallery'
+    'header';
+    padding: 10px;
+    grid-gap: 10px;
+    overflow: hidden;
+}
+
+
+/*end of style of main*/
+
+
+/*style of sales*/
+
+h2 {grid-area: header;}
+#item1 {grid-area: menu;}
+#item2 {grid-area: right;}
+#item3 {grid-area: footer;}
+#item5 {grid-area: iframe;}
+
+#item5{
+    border: hidden;
+    text-align: right;
+}
+
+#section5{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+#item5 iframe{
+    border: solid var(--c2);
+    border-bottom-right-radius: 5px;
+    width: auto;
+    height: auto;
+}
+
+#item5 a{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-decoration: none;
+    transition: background-color 1s;
+    transition-timing-function: ease;
+    border-top: 5px solid var(--c2);
+    border-bottom:5px solid transparent;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    background-clip: padding-box;
+    background-color: var(--c2);
+    z-index: 1;
+}
+
+#item5 a:hover{
+    background-color: var(--c1);
+}
+
+#Sales{
+    display: grid;
+    grid-template-areas:
+    'header header header header header'
+    'menu right footer iframe iframe'
+    'menu right footer iframe iframe';
+    padding: 10px;
+    grid-gap: 10px;
+    overflow: hidden;
+}
+
+
+/*end of style of sales*/
+
+
+/*Style for the gallery*/
+
+.gallery_service{
+    display: grid;
+    text-align: center;
+    grid-gap: 10px;
+    grid-template-columns: 30rem;
+    justify-items: center;
+    align-content: center;
+}
+
+.gallery0{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.gallery1{
+    width: auto;
+}
+
+#spatiu{
+    display: none;
+}

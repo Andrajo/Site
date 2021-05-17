@@ -1,0 +1,27 @@
+{
+  "name": "untitled",
+  "version": "1.0.0",
+  "description": "Gamer's Spot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "games",
+    "action",
+    "RPG",
+    "shooter",
+    "fantasy"
+  ],
+  "author": "Avramescu Andrei",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "exec": "^0.2.1",
+    "express": "^4.17.1",
+    "fs": "*",
+    "git": "^0.1.5",
+    "node-sass": "^6.0.0",
+    "sharp": "^0.28.1"
+  }
+}

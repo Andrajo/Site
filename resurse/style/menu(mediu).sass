@@ -1,0 +1,95 @@
+#open_menu
+  display: none
+
+
+#navigation
+  width: 100%
+  background: var(--c2)
+  height: auto
+  position: fixed
+  z-index: 6
+
+  la_prima_del_listo
+    display: block
+
+  #home_text
+    display: none
+
+  a
+    font-size: 14px
+    color: var(--c4)
+    text-align: center
+    text-decoration: none
+
+.menu1
+  background-color: var(--c2)
+  height: 5rem
+  padding: 0
+
+  .subnavbtn
+    border: none
+    outline: none
+    background-color: inherit
+    font-family: inherit
+
+
+.subnavbtn
+  transition: border 300ms, box-shadow 300ms
+
+.menu1:hover .subnavbtn
+  box-shadow: inset 0 0 25px var(--c6)
+
+@keyframes button_animation
+  0%
+    transform: scaleY(0)
+
+  100%
+    transform: scaleY(1)
+
+.subnav-content
+  display: none
+  position: absolute
+  background-color: var(--c2)
+  width: auto
+  animation: button_animation 900ms ease-in-out
+  transform-origin: top
+
+  a
+    display: flex
+    animation: button_animation 900ms ease-in-out
+    transform-origin: top
+
+#first_menu_arrow
+  width: 100%
+  top: 18%
+  left: 0
+  opacity: 0
+  position: absolute
+  transition: left 900ms, opacity 900ms
+  text-align: left
+
+#second_menu_arrow
+  width: 100%
+  top: 45%
+  left: 0
+  opacity: 0
+  position: absolute
+  transition: left 900ms, opacity 900ms
+  text-align: left
+
+#third_menu_arrow
+  width: 100%
+  top: 73%
+  left: 0
+  opacity: 0
+  position: absolute
+  transition: left 900ms, opacity 900ms
+  text-align: left
+
+.subnav-content
+  a:hover
+    border: none
+
+  #first_menu_arrow:hover, #second_menu_arrow:hover, #third_menu_arrow:hover
+    left: 10%
+    opacity: 1

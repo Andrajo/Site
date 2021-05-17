@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.animated_gallery {
+  width: 400px;
+  height: 225px;
+  border: 5px solid black;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  top: 50%;
+  left: 10%;
+  border-image: url("/resurse/gallery_photo/DOOM.jpg") 30 stretch;
+}
+.animated_gallery figcaption {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: var(--c3);
+  width: 100%;
+  text-align: center;
+}
+.animated_gallery figure {
+  width: 400px;
+  height: 225px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  animation-name: gallery_showcase;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 6s;
+  transform-origin: 0 center;
+}
+.animated_gallery figure:nth-of-type(2) {
+  animation-delay: 0s;
+}
+.animated_gallery figure:nth-of-type(1) {
+  animation-delay: 3s;
+}
+.animated_gallery:hover figure {
+  animation-play-state: paused;
+}
+
+@keyframes gallery_showcase {
+  0% {
+    z-index: 4;
+    opacity: 1;
+    clip-path: inset(50% 0 50% 0);
+  }
+  24% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  25% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  49% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .animated_gallery {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=animated_gallery.css.map */

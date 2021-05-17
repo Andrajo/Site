@@ -1,0 +1,90 @@
+@use "sass:list"
+@use "sass:math"
+
+$lista:2,4,8,16
+$index:math.random(length($lista))
+$numar:nth($lista,$index)
+$time:0
+$procentaj0:100 / $numar
+$procentaj:100 / ($numar + 2)
+$procentaj2:100 - $procentaj0
+
+*
+  margin: 0
+  padding: 0
+
+.animated_gallery
+  width: 400px
+  height: 225px
+  border: 5px solid black
+  position: relative
+  overflow: hidden
+  margin-bottom: 5rem
+  top: 50%
+  left: 10%
+  border-image: url("/resurse/gallery_photo/DOOM.jpg") 30 stretch
+
+  figcaption
+    display: block
+    position: absolute
+    bottom: 0
+    background: var(--c3)
+    width: 100%
+    text-align: center
+
+
+  figure
+    width: 400px
+    height: 225px
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    animation-name: gallery_showcase
+    animation-timing-function: linear
+    animation-iteration-count: infinite
+    animation-fill-mode: forwards
+    animation-duration: 3*$numar+s
+    transform-origin: 0 center
+
+
+    @while $numar>0
+      &:nth-of-type(#{$numar})
+        animation-delay: $time+s
+      $time:$time + 3
+      $numar:$numar - 1
+
+  &:hover figure
+    animation-play-state: paused
+
+@keyframes gallery_showcase
+  0%
+    z-index: 4
+    opacity: 1
+    clip-path: inset(50% 0 50% 0)
+
+  #{$procentaj - 1}%
+    opacity: 1
+    clip-path: inset(0 0 0 0)
+
+  #{$procentaj}%
+    opacity: 1
+    clip-path: inset(0 0 0 0)
+
+
+  #{$procentaj2 - 1}%
+    opacity: 1
+    clip-path: inset(0 0 0 0)
+
+  #{$procentaj2}%
+    opacity: 1
+    clip-path: inset(0 0 0 0)
+
+  100%
+    opacity: 0
+    z-index: -1 * $numar
+
+@media screen and (max-width: 1200px)
+  .animated_gallery
+    display: none
+

@@ -1,0 +1,117 @@
+{
+  "cale_galerie":"resurse/gallery_photo",
+  "imagini": [
+    {
+      "cale_fisier": "BB.jpg",
+      "titlu": "BloodBorne",
+      "alt":"Promotional material",
+      "text_descriere":"BloodBorne is a ps4 exclusive game, souls series",
+      "luni":["january","may","september"]
+    },
+    {
+      "cale_fisier": "Csgo.jpg",
+      "titlu": "CounterStrike",
+      "alt":"Promotional material",
+      "text_descriere":"Csgo is a shooter",
+      "luni":["february","june","october"]
+    },
+    {
+      "cale_fisier": "DemonSouls.jpg",
+      "titlu": "DemonSouls",
+      "alt":"Promotional material",
+      "text_descriere":"Ps5 exclusive game, souls series",
+      "luni":["march","july","november"]
+    },
+    {
+      "cale_fisier": "DOOM.jpg",
+      "titlu": "DOOM Eternal",
+      "alt":"Promotional material",
+      "text_descriere":"Promotional art of the game",
+      "luni":["april","august","december"]
+    },
+    {
+      "cale_fisier": "Ds2.jpg",
+      "titlu": "DarkSouls2",
+      "alt":"In game screenshot",
+      "text_descriere":"Souls series",
+      "luni":["may","september","january"]
+    },
+    {
+      "cale_fisier": "Ds3.jpg",
+      "titlu": "DarkSouls3",
+      "alt":"Fanart",
+      "text_descriere":"Souls series",
+      "luni":["june","october","february"]
+    },
+    {
+      "cale_fisier": "DsRemastered.jpg",
+      "titlu": "DarkSoulsRemastered",
+      "alt":"In game screenshot",
+      "text_descriere":"Souls series",
+      "luni":["july","november","march"]
+    },
+    {
+      "cale_fisier": "Fifa.jpg",
+      "titlu": "Fifa",
+      "alt":"Promotional material",
+      "text_descriere":"Football game",
+      "luni":["august","december","april"]
+    },
+    {
+      "cale_fisier": "Minecraft.jpg",
+      "titlu": "Minecraft",
+      "alt":"In game screenshot",
+      "text_descriere":"Poggers game,OpenWorld",
+      "luni":["september","january","may"]
+    },
+    {
+      "cale_fisier": "Nfs.jpg",
+      "titlu": "NeedForSpeed",
+      "alt":"In game screenshot",
+      "text_descriere":"Car racing",
+      "luni":["october","february","june"]
+    },
+    {
+      "cale_fisier": "SlayTheSpire.jpg",
+      "titlu": "SlayTheSpire",
+      "alt":"Promotional material",
+      "text_descriere":"Card game, dungeon crawler",
+      "luni":["november","march","july"]
+    },
+    {
+      "cale_fisier": "SpiderMan.jpg",
+      "titlu": "SpiderMan",
+      "alt":"In game screenshot",
+      "text_descriere":"OpenWorld",
+      "luni":["december","april","august"]
+    },
+    {
+      "cale_fisier": "anete-lusina.jpg",
+      "titlu": "Credit Anete Lusina",
+      "alt":"Stock footage",
+      "text_descriere":"Stock footage",
+      "luni":["january","may","september"]
+    },
+    {
+      "cale_fisier": "garrett-morrow.jpg",
+      "titlu": "Credit Garret Morrow",
+      "alt":"Stock footage",
+      "text_descriere":"Stock footage",
+      "luni":["february","june","october"]
+    },
+    {
+      "cale_fisier": "nana-dua.jpg",
+      "titlu": "Credit Nana Dua",
+      "alt":"Stock footage",
+      "text_descriere":"Stock footage",
+      "luni":["march","july","november"]
+    },
+    {
+      "cale_fisier": "pixabay.jpg",
+      "titlu": "Credit Pixabay",
+      "alt":"Stock footage",
+      "text_descriere":"Stock footage",
+      "luni":["april","august","december"]
+    }
+  ]
+}

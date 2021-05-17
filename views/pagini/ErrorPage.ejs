@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/meta_links.ejs") %>
+    <title>404</title>
+    <meta name="keywords" content="Error , 404 , 404 Error, Nothing here, Page not found">
+    <meta name="description" content="Disaster, how did you end up trying to access a page that doesn't exist? ">
+    <link rel="stylesheet" href="../../resurse/style/ErrorPage.css">
+
+</head>
+<%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
+<body>
+<main>
+    <section class="error">
+        <h2>Error 404</h2>
+        <p>There is nothing to be done here, this page does not exist!</p>
+        <img src="/resurse/gallery_photo/404/404.jpg" alt="404" title="404 error">
+    </section>
+</main>
+<%- include("../fragmente/footer.ejs") %>
+<script src="../../resurse/style/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+#open_menu
+  position: fixed
+  display: block
+  background: var(--c2)
+  z-index: 6
+
+#la_prima_del_listo
+  display: flex
+  flex-direction: column-reverse
+
+#navigation
+  width: 100%
+  background: var(--c2)
+  height: auto
+  position: fixed
+  top: 50px
+  overflow-y: scroll
+  animation: menu_showing 900ms linear
+  transform-origin: 0 0
+  z-index: 6
+
+#menu_div
+  display: none
+  z-index: 2
+
+#navigation a
+  font-size: 14px
+  color: var(--c4)
+  text-align: center
+  text-decoration: none
+
+@keyframes menu_showing
+  0%
+    transform: scale(0)
+
+  100%
+    transform: scale(1)
+
+.menu1
+  background-color: var(--c2)
+  height: 5rem
+  padding: 0
+
+  .subnavbtn
+    border: none
+    outline: none
+    background-color: inherit
+    font-family: inherit
+
+  #home_text
+    display: none
+
+.subnavbtn, .subnav-content a
+  width: 100%
+  transition: border 300ms, box-shadow 300ms
+  justify-content: center
+  align-content: center
+
+.menu1:hover .subnavbtn
+  box-shadow: inset 0 0 25px var(--c6)
+
+.subnav-content
+  a
+    &:hover
+      box-shadow: inset 0 0 25px var(--c6)
+
+    text-align: center
+    animation: button_animation 1.2s ease-in-out
+    transform-origin: top
+
+  display: none
+  position: absolute
+  left: 0
+  background-color: var(--c2)
+  width: 100%
+  overflow-y: scroll
+  animation: button_animation 1.2s ease-in-out
+  transform-origin: top
+
+@keyframes button_animation
+  0%
+    transform: scaleY(0)
+
+  100%
+    transform: scaleY(1)
+
+#first_menu_arrow, #second_menu_arrow, #third_menu_arrow
+  display: none
+
+.subnav-content
+  a:hover
+    border: none
+
+  #first_menu_arrow:hover, #second_menu_arrow:hover, #third_menu_arrow:hover
+    left: 10%
+    opacity: 1
+
+  hr
+    z-index: 1
+
+  #item5
+    z-index: 1
+
+  a
+    z-index: 1

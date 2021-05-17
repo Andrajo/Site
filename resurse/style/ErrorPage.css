@@ -1,0 +1,19 @@
+.error{
+    width: 97%;
+    position: absolute;
+    text-align: center;
+    top:17%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+.figura{
+    display: none;
+}
+
+.banner{
+    display: none;
+}

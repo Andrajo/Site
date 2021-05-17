@@ -1,0 +1,138 @@
+
+/*main*/
+
+main{
+    text-align: left;
+    overflow: auto;
+}
+
+main section{
+    border: hidden;
+}
+
+.gallery_service{
+    display: inline-grid;
+}
+
+
+#Sales {grid-area: menu;}
+#warning {grid-area: header;}
+#Most_popular {grid-area: popular;}
+#New_games {grid-area: new;}
+.banner {grid-area: banner}
+.table {grid-area: table}
+.info_explorator {grid-area: date_cont}
+.gallery_service {grid-area: gallery}
+.friends {grid-area: friend}
+.separator {grid-area: separator}
+
+
+main{
+    display: grid;
+    grid-template-areas:
+    'menu menu menu menu'
+    'table table popular popular'
+    'table table header header'
+    'friend date_cont date_cont new'
+    'separator separator separator separator'
+    'gallery gallery gallery gallery';
+    padding: 1rem;
+    grid-gap: 1rem;
+    overflow: hidden;
+}
+
+/*end of main*/
+
+/*Sales*/
+
+h2 {grid-area: header;}
+#item1 {grid-area: menu;}
+#item2 {grid-area: right;}
+#item3 {grid-area: footer;}
+#item5 {grid-area: iframe;}
+
+#item5{
+    border: hidden;
+    text-align: right;
+}
+
+#section5{
+    display: flex;
+    float: right;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+#item5 iframe{
+    border: solid var(--c2);
+    border-bottom-right-radius: 3px;
+}
+
+
+#item5 a{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-decoration: none;
+    color: var(--c4);
+    transition: background-color 1s;
+    transition-timing-function: ease;
+    border-top: 6px solid var(--c2);
+    border-bottom:6px solid transparent;
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    background-clip: padding-box;
+    background-color: var(--c2);
+    margin: -3px;
+    right: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+#item5 a:hover{
+    background-color: var(--c1);
+    color: var(--c4);
+}
+
+#Sales{
+    display: grid;
+    grid-template-areas:
+    'header header header header header'
+    'menu right footer iframe iframe'
+    'menu right footer iframe iframe';
+    padding: 10px;
+    grid-gap: 10px;
+    overflow: hidden;
+}
+
+/*end of sales*/
+
+/*Style for the gallery*/
+
+.gallery_service{
+    width: 100%;
+    margin: 0;
+    display: grid;
+    text-align: center;
+    grid-gap: 10px;
+    grid-template-columns: 420px 420px 420px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left:0;
+}
+
+.gallery0{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.gallery1{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid black;
+    height: 100%;
+    padding: 2px;
+}
