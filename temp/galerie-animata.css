@@ -33,20 +33,14 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-duration: 12s;
+  animation-duration: 6s;
   transform-origin: 0 center;
 }
-.animated_gallery figure:nth-of-type(4) {
+.animated_gallery figure:nth-of-type(2) {
   animation-delay: 0s;
 }
-.animated_gallery figure:nth-of-type(3) {
-  animation-delay: 3s;
-}
-.animated_gallery figure:nth-of-type(2) {
-  animation-delay: 6s;
-}
 .animated_gallery figure:nth-of-type(1) {
-  animation-delay: 9s;
+  animation-delay: 3s;
 }
 .animated_gallery:hover figure {
   animation-play-state: paused;
@@ -58,25 +52,25 @@
     opacity: 1;
     clip-path: inset(50% 0 50% 0);
   }
-  15.6666666667% {
+  24% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
   }
-  16.6666666667% {
+  25% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
   }
-  74% {
+  49% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
   }
-  75% {
+  50% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
   }
   100% {
     opacity: 0;
-    z-index: -4;
+    z-index: -2;
   }
 }
 @media screen and (max-width: 1200px) {

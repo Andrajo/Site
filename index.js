@@ -14,7 +14,9 @@ function verificaImagini(){
     var jsi=JSON.parse(textFisier);
     var caleGalerie=jsi.cale_galerie;
     let vectorCai=[]
+    var position=0;
     for(let im of jsi.imagini){
+        position++;
         var imVeche= path.join(caleGalerie, im.cale_fisier);
         var ext= path.extname(im.cale_fisier);
         var numeFisier= path.basename(im.cale_fisier,ext)
@@ -46,7 +48,7 @@ function verificaImagini(){
                         console.log("eroare conversie",imVeche,"->",imNouaMare,err);
                 });
 
-        vectorCai.push({mare:"/"+imNouaMare,mediu:"/"+imNouaMedie,mic:"/"+imNoua,titlu:im.titlu,luni:im.luni,alt:im.alt,text_descriere:im.text_descriere});
+        vectorCai.push({mare:"/"+imNouaMare,mediu:"/"+imNouaMedie,mic:"/"+imNoua,titlu:im.titlu,luni:im.luni,alt:im.alt,text_descriere:im.text_descriere,position:position});
     }
     console.log("mere2");
     return vectorCai;
@@ -139,5 +141,5 @@ application.get("/*",function(req,res){
 
 
 
-application.listen(https://github.com/Andrajo/SiteTw_Etapa4);
+application.listen(800);
 console.log("mere");
