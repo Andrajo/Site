@@ -5,9 +5,8 @@ $lista:2,4,8,16
 $index:math.random(length($lista))
 $numar:nth($lista,$index)
 $time:0
-$procentaj0:100 / $numar
 $procentaj:100 / ($numar + 2)
-$procentaj2:100 - $procentaj0
+$re:0
 
 *
   margin: 0
@@ -57,34 +56,24 @@ $procentaj2:100 - $procentaj0
   &:hover figure
     animation-play-state: paused
 
+
 @keyframes gallery_showcase
-  0%
-    z-index: 4
-    opacity: 1
-    clip-path: inset(50% 0 50% 0)
-
-  #{$procentaj - 1}%
-    opacity: 1
-    clip-path: inset(0 0 0 0)
-
-  #{$procentaj}%
-    opacity: 1
-    clip-path: inset(0 0 0 0)
-
-
-  #{$procentaj2 - 1}%
-    opacity: 1
-    clip-path: inset(0 0 0 0)
-
-  #{$procentaj2}%
-    opacity: 1
-    clip-path: inset(0 0 0 0)
-
-  100%
-    opacity: 0
-    z-index: -1 * $numar
+  @while $re <= 100
+    @if $re == 0
+      #{$re}%
+        z-index: 4
+        opacity: 1
+        clip-path: inset(50% 0 50% 0)
+    @if $re != 0 and $re != 100
+      #{$re}%
+        opacity: 1
+        clip-path: inset(0 0 0 0)
+    @if $re == 100
+      #{$re}%
+        opacity: 0
+        z-index: -1 * $numar
+    $re:$re + $procentaj
 
 @media screen and (max-width: 1200px)
   .animated_gallery
     display: none
-
