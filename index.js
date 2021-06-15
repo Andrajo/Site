@@ -64,6 +64,13 @@ application.get(["/","/index"], function(req,res){
     res.render("pagini/index.ejs",{imagini:vectorCai,ip:req.connection.remoteAddress});
 });
 
+application.get(["/jocuri"], function(req,res){
+
+    let vectorCai=verificaImagini()
+
+    res.render("pagini/jocuri.ejs",{imagini:vectorCai});
+});
+
 
 /*
 application.get("/data", function(req,res){
@@ -135,7 +142,6 @@ application.get("/*",function(req,res){
         else{
             res.send(rezultatRender);
         }
-
     });
 });
 
