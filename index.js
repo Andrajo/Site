@@ -3,11 +3,30 @@ const path= require("path");
 const fs=require('fs');
 const sharp=require('sharp');
 const {exec} = require("child_process");
+const {Client} = require("pg");
 
 const application=express(); //serverul
+
+const client = new Client({
+    host: "localhost",
+    user: "postgres",
+    password: "Cobra1einactiune",
+    database: "proiecttw",
+    port:8080
+})
+
 application.set("view engine","ejs");
 application.use("/resurse", express.static(path.join(__dirname,"resurse")));
 
+
+client.connect()
+
+const results= client.query("select joc.id_joc, joc.pret from joc where joc.pret=60", function (err,res){
+    //console.log(err, res);
+    console.log(res.rows);
+});
+
+//console.log(results);
 
 function verificaImagini(){
     var textFisier=fs.readFileSync("resurse/json/galerie.json")
