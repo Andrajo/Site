@@ -13,6 +13,19 @@
     <section class="error">
         <h2>Joc</h2>
     </section>
+    <article>
+        <figure class="joc_pogg">
+            <picture>
+                <source srcset="<%- locals.produse.imagini_mici %>" media="(max-width:700px)"/>
+                <source srcset="<%- locals.produse.imagini_medii %>" media="(max-width:1200px)"/>
+                <img src=<%- locals.produse.imagini %> alt="<% locals.produse.nume_joc%>" title="<% locals.produse.descriere%>">
+            </picture>
+            <figcaption><%- locals.produse.nume_joc%></figcaption>
+            <a href="/joc">
+                <p>Price: <%- locals.produse.pret%>$</p>
+            </a>
+        </figure>
+    </article>
 </main>
 <%- include("../fragmente/footer.ejs") %>
 <script src="../../resurse/style/main.js"></script>

@@ -21,10 +21,6 @@ application.use("/resurse", express.static(path.join(__dirname,"resurse")));
 
 client.connect()
 
-const results= client.query("select joc.id_joc, joc.pret from joc where joc.pret=60", function (err,res){
-    //console.log(err, res);
-    console.log(res.rows);
-});
 
 //console.log(results);
 
@@ -83,11 +79,21 @@ application.get(["/","/index"], function(req,res){
     res.render("pagini/index.ejs",{imagini:vectorCai,ip:req.connection.remoteAddress});
 });
 
-application.get(["/jocuri"], function(req,res){
+application.get("/joc/:id_joc",function (req,res){
 
-    let vectorCai=verificaImagini()
+    const results= client.query("select * from joc where joc.id_joc="+req.params.id_joc, function (err,rez){
+        res.render("pagini/joc.ejs",{produse:rez.rows[0]});
+    });
+});
 
-    res.render("pagini/jocuri.ejs",{imagini:vectorCai});
+application.get("/jocuri", function(req,res){
+
+    const results= client.query("select joc.nume_joc, joc.pret, joc.descriere, joc.imagini , joc.imagini_mici, joc.id_joc from joc order by joc.pret", function (err,rez){
+        console.log(rez.rows);
+
+        res.render("pagini/jocuri",{produse:rez.rows});
+    });
+
 });
 
 
@@ -131,7 +137,7 @@ application.get("*/galerie-animata.css",function(req,res){
 
 application.get("/galerie",function(req,res){
     let vectorCai=verificaImagini()
-    res.render("pagini/galerie",{imagini:vectorCai})
+    res.render("pagini/galerie.ejs",{imagini:vectorCai})
 });
 
 application.get("*/galerie.json",function(req,res){
@@ -163,7 +169,6 @@ application.get("/*",function(req,res){
         }
     });
 });
-
 
 
 application.listen(800);
