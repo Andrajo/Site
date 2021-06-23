@@ -12,25 +12,44 @@
 <body>
 <main>
     <h2 id="Title">Jocuri</h2>
-    <section class="jocuri_pogg_service">
-        <%var how_many_photos=0;%>
-        <% for (let imag of locals.produse){%>
-        <article>
-            <figure class="jocuri_pogg">
-                <picture>
-                    <source srcset="<%- imag.imagini_mici %>" media="(max-width:700px)"/>
-                    <source srcset="<%- imag.imagini_medii %>" media="(max-width:1200px)"/>
-                    <img src=<%- imag.imagini %> alt="<%imag.nume_joc%>" title="<%imag.descriere%>">
-                </picture>
-                <a href="/joc/<%- imag.id_joc%>">
-                    <figcaption><%-imag.nume_joc%></figcaption>
-                    <p>Price: <%- imag.pret%>$</p>
-                </a>
-            </figure>
-            <%how_many_photos++;%>
-        </article>
-        <%}%>
-    </section>
+    <article>
+        <section class="jocuri_pogg_service">
+            <% for (let imag of locals.produse){%>
+            <a href="/joc/<%- imag.id_joc%>">
+                <h3><%-imag.nume_joc%></h3>
+                <figure class="jocuri_pogg">
+                    <picture>
+                        <source srcset="<%- imag.imagini_mici %>" media="(max-width:700px)"/>
+                        <source srcset="<%- imag.imagini_medii %>" media="(max-width:1200px)"/>
+                        <img src="<%- imag.imagini_medii %>" alt="<%imag.nume_joc%>" title="<%imag.descriere%>">
+                    </picture>
+                    <table>
+                        <tr>
+                            <th>Price</th>
+                            <th><%- imag.pret%>$</th>
+                        </tr>
+                        <tr>
+                            <th>Category</th>
+                            <th><%- imag.pret%></th>
+                        </tr>
+                        <tr>
+                            <th>Genre</th>
+                            <th><%- imag.gen_joc%></th>
+                        </tr>
+                        <tr>
+                            <th>Launch date</th>
+                            <th><%- imag.pret%></th>
+                        </tr>
+                        <tr>
+                            <th>Sales</th>
+                            <th><%- imag.reduce%></th>
+                        </tr>
+                    </table>
+                </figure>
+            </a>
+            <%}%>
+        </section>
+    </article>
 </main>
 <div class="pagebreak"> </div>
 <%- include("../fragmente/footer.ejs") %>

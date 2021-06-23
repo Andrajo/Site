@@ -5,27 +5,20 @@
     <title>Joc</title>
     <meta name="keywords" content="Error , 404 , 404 Error, Nothing here, Page not found">
     <meta name="description" content="Disaster, how did you end up trying to access a page that doesn't exist? ">
-    <link rel="stylesheet" href="../../resurse/style/ErrorPage.css">
+    <link rel="stylesheet" href="../../resurse/style/joc_pogg.css">
 </head>
 <%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
 <body>
 <main>
-    <section class="error">
-        <h2>Joc</h2>
-    </section>
-    <article>
-        <figure class="joc_pogg">
-            <picture>
-                <source srcset="<%- locals.produse.imagini_mici %>" media="(max-width:700px)"/>
-                <source srcset="<%- locals.produse.imagini_medii %>" media="(max-width:1200px)"/>
-                <img src=<%- locals.produse.imagini %> alt="<% locals.produse.nume_joc%>" title="<% locals.produse.descriere%>">
-            </picture>
-            <figcaption><%- locals.produse.nume_joc%></figcaption>
-            <a href="/joc">
-                <p>Price: <%- locals.produse.pret%>$</p>
-            </a>
-        </figure>
-    </article>
+    <h2 id="Title"><%- locals.produse.nume_joc%></h2>
+    <figure class="joc_pogg">
+        <picture id="imagine_joc">
+            <source srcset="<%- locals.produse.imagini_mici %>" media="(max-width:700px)"/>
+            <source srcset="<%- locals.produse.imagini_medii %>" media="(max-width:1200px)"/>
+            <img src=<%- locals.produse.imagini %> alt="<% locals.produse.nume_joc%>" title="<% locals.produse.descriere%>">
+        </picture>
+        <p id="pret_joc">Price: <%- locals.produse.pret%>$</p>
+    </figure>
 </main>
 <%- include("../fragmente/footer.ejs") %>
 <script src="../../resurse/style/main.js"></script>

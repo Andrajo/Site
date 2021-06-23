@@ -19,7 +19,7 @@ application.set("view engine","ejs");
 application.use("/resurse", express.static(path.join(__dirname,"resurse")));
 
 
-client.connect()
+client.connect();
 
 
 //console.log(results);
@@ -62,7 +62,6 @@ function verificaImagini(){
                     if(err)
                         console.log("eroare conversie",imVeche,"->",imNouaMare,err);
                 });
-
         vectorCai.push({mare:"/"+imNouaMare,mediu:"/"+imNouaMedie,mic:"/"+imNoua,titlu:im.titlu,luni:im.luni,alt:im.alt,text_descriere:im.text_descriere,position:position});
     }
     console.log("mere2");
@@ -88,7 +87,7 @@ application.get("/joc/:id_joc",function (req,res){
 
 application.get("/jocuri", function(req,res){
 
-    const results= client.query("select joc.nume_joc, joc.pret, joc.descriere, joc.imagini , joc.imagini_mici, joc.id_joc from joc order by joc.pret", function (err,rez){
+    const results= client.query("select joc.nume_joc, joc.pret, joc.descriere, joc.gen_joc, joc.reducere, joc.data_de_lansare , joc.imagini , joc.imagini_mici, joc.imagini_medii, joc.id_joc from joc order by joc.pret", function (err,rez){
         console.log(rez.rows);
 
         res.render("pagini/jocuri",{produse:rez.rows});

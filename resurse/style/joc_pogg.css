@@ -1,0 +1,24 @@
+main{
+    height: 500px;
+}
+
+#imagine_joc{grid-area: imagine;}
+#pret_joc{grid-area: pret;}
+
+.joc_pogg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top:80%;
+    left:0;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+    'imagine imagine pret'
+    'imagine imagine pret';
+}
+
+#Title{
+    position: absolute;
+    top:20%;
+}
