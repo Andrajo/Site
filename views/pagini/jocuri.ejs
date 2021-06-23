@@ -11,19 +11,19 @@
 <%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
 <body>
 <main>
-    <h2 id="Title">Jocuri</h2>
-    <article>
+    <h2 id="Title">Games</h2>
+    <article class="articol">
         <section class="jocuri_pogg_service">
             <% for (let imag of locals.produse){%>
             <a href="/joc/<%- imag.id_joc%>">
-                <h3><%-imag.nume_joc%></h3>
                 <figure class="jocuri_pogg">
-                    <picture>
+                    <h3 class="nume_joc"><%-imag.nume_joc%></h3>
+                    <picture class="game_image">
                         <source srcset="<%- imag.imagini_mici %>" media="(max-width:700px)"/>
                         <source srcset="<%- imag.imagini_medii %>" media="(max-width:1200px)"/>
                         <img src="<%- imag.imagini_medii %>" alt="<%imag.nume_joc%>" title="<%imag.descriere%>">
                     </picture>
-                    <table>
+                    <table class="categori_table">
                         <tr>
                             <th>Price</th>
                             <th><%- imag.pret%>$</th>
@@ -42,9 +42,17 @@
                         </tr>
                         <tr>
                             <th>Sales</th>
-                            <th><%- imag.reduce%></th>
+                            <th><%- imag.reducere%></th>
                         </tr>
                     </table>
+                    <p class="descriere_joc"><%- imag.descriere%></p>
+                    <%if(imag.este_joc===true){%>
+                        <p class="este_joc">Category:Game</p>
+                    <%}
+                    else{%>
+                        <p class="este_joc">Category:Equipment</p>
+                    <%}%>
+                    <p class="joc_id">Id:ent<%-imag.id_joc%></p>
                 </figure>
             </a>
             <%}%>
@@ -52,7 +60,6 @@
     </article>
 </main>
 <div class="pagebreak"> </div>
-<%- include("../fragmente/footer.ejs") %>
 <script src="../../resurse/style/main.js"></script>
 </body>
 </html>
