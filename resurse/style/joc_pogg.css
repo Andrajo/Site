@@ -3,19 +3,36 @@ main{
 }
 
 #imagine_joc{grid-area: imagine;}
+#id_joc{grid-area: id;}
+#nume_joc{grid-area: nume;}
+#descriere_joc{grid-area: descriere;}
 #pret_joc{grid-area: pret;}
+#data_joc{grid-area: data;}
+#scor_joc{grid-area: scor;}
+#ore{grid-area: ore;}
+#reducere{grid-area: reducere;}
+#restrictie{grid-area: restrictie;}
+#premiu{grid-area: premiu;}
+#numar_pre{grid-area: nr_pre;}
+#este_joc{grid-area: este;}
+#gen_joc{grid-area: gen;}
+#devs{grid-area: devs;}
 
 .joc_pogg{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
-    top:80%;
+    top:25%;
     left:0;
-    margin: 0;
+    margin: 20px;
     display: grid;
     grid-template-areas:
     'imagine imagine pret'
-    'imagine imagine pret';
+    'imagine imagine gen'
+    'id nume descriere'
+    'data scor ore'
+    'reducere restrictie premiu'
+    'nr_pre este devs';
 }
 
 #Title{
