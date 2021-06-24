@@ -34,7 +34,7 @@ article{
     margin: 0;
     display: grid;
     flex-direction: row;
-    width: 550px;
+    width: 600px;
     height: 350px;
     overflow: hidden;
     border: 2px solid black;
@@ -64,7 +64,7 @@ a{
 table{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 250px;
+    width: 300px;
     height: 169px;
 }
 table th,.table td{

@@ -37,8 +37,17 @@
                             <th><%- imag.gen_joc%></th>
                         </tr>
                         <tr>
-                            <th>Launch date</th>
-                            <th><%- imag.pret%></th>
+                            <th>Launch</th>
+                            <%
+                            const monthNames = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+                            "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                            const weekday = ["Monday", "Tuesday", "Wednesday", "Joi", "Vineri", "Sambata", "Duminica"];
+                            var date=new Date(imag.data_de_lansare);
+                            var day=date.getDate();
+                            var month=monthNames[date.getMonth()];
+                            var year=date.getFullYear();
+                            var week_day=weekday[date.getDay()];%>
+                            <th><%- day%>(<%-week_day%>)/<%-month%>/<%-year%></th>
                         </tr>
                         <tr>
                             <th>Sales</th>

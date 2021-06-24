@@ -1,0 +1,66 @@
+#dark_mode{
+    position: fixed;
+    left: 95%;
+    z-index: 7;
+    top: 0;
+    height:7%;
+    width: 5%;
+    color: var(--c3);
+}
+
+.light-mode-button {
+    background:0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 60%;
+    width: 70%;
+    position: relative;
+    border: 6px solid rgba(255,255,255,0);
+}
+
+.light-mode-button span:nth-child(1) {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    border-radius: 20px;
+    background-color: #d6d7db;
+    box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+    transition: .3s;
+}
+
+.light-mode-button span:nth-child(2) {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 45%;
+    height: 100%;
+    background-color: var(--c7);
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+    transition: .3s;
+}
+
+
+
+body {
+    background-color: var(--c3);
+    transition: background-color .3s;
+}
+
+body[light-mode=dark] {
+    background-color: var(--c6);
+    color: #ced4e2;
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1){
+    background-color: #ced4e2;
+    color: var(--c6);
+}
+
+body[light-mode=dark] .light-mode-button span:nth-child(2) {
+    left: 55%;
+    background-color: var(--c6);
+}
+

@@ -4,6 +4,7 @@
 @import "table.css";
 @import "banner.css";
 @import "menu.css";
+@import "dark_mode.css";
 
 
 /*body*/
@@ -75,4 +76,8 @@ footer{
 address a{
     text-decoration: none;
     color: var(--c2);
+}
+
+.dark{
+    background-color: red;
 }
