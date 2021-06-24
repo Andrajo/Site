@@ -37,8 +37,8 @@ article{
     width: 600px;
     height: 350px;
     overflow: hidden;
-    border: 2px solid black;
-    padding: 0;
+    border-radius: 15px;
+    padding: 5px;
     background-color: var(--c5);
     grid-template-areas:
     'nume nume'
@@ -53,6 +53,7 @@ article{
     position: absolute;
     top:20%;
     left: 47.5%;
+    font-size: 30px;
 }
 
 a{

@@ -63,3 +63,18 @@ body[light-mode=dark] .light-mode-button span:nth-child(2) {
     left: 55%;
     background-color: var(--c6);
 }
+
+
+.fa-moon{
+    position: absolute;
+    left:3px;
+    top:4px;
+    opacity: 0;
+    color: var(--c7);
+}
+
+.fa-sun{
+    position: absolute;
+    left:3px;
+    top:4px;
+}

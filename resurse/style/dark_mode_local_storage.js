@@ -8,5 +8,7 @@ window.onload=function () {
             x[i].style.background="#0B3D40";
             x[i].style.color="#ced4e2";
         }
+        soare.style.opacity=0;
+        luna.style.opacity=1;
     }
 }
