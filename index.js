@@ -73,37 +73,49 @@ function verificaImagini(){
 
 application.get(["/","/index"], function(req,res){
 
-    let vectorCai=verificaImagini()
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii){
+        console.log(categorii.rows);
+        let vectorCai=verificaImagini()
 
-    res.render("pagini/index.ejs",{imagini:vectorCai,ip:req.connection.remoteAddress});
+        res.render("pagini/index.ejs",{imagini:vectorCai,ip:req.connection.remoteAddress, categorii:categorii.rows});
+    });
+
 });
 
 application.get("/joc/:id_joc",function (req,res){
 
-    const results= client.query("select * from joc where joc.id_joc="+req.params.id_joc, function (err,rez){
-        res.render("pagini/joc.ejs",{produse:rez.rows[0]});
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
+
+        client.query("select * from joc where joc.id_joc=" + req.params.id_joc, function (err, rez) {
+            res.render("pagini/joc.ejs", {produse: rez.rows[0], categorii: categorii.rows});
+        });
     });
 });
 
 application.get("/jocuri/:gen_joc", function(req,res){
 
-    let conditie = req.params.gen_joc ? "and joc.gen_joc ='"+req.params.gen_joc+"'" : "";
-    console.log(conditie);
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii){
 
-    const results= client.query("select joc.developeri, joc.nume_joc, joc.pret, joc.descriere, joc.gen_joc, joc.reducere, joc.data_de_lansare , joc.imagini , joc.imagini_mici, joc.imagini_medii, joc.id_joc, joc.este_joc from joc where 1=1"+conditie, function (err,rez){
+        let conditie = req.params.gen_joc ? "and joc.gen_joc ='"+req.params.gen_joc+"'" : "";
+        console.log(conditie);
 
-        res.render("pagini/jocuri",{produse:rez.rows});
+        client.query("select joc.developeri, joc.nume_joc, joc.pret, joc.descriere, joc.gen_joc, joc.reducere, joc.data_de_lansare , joc.imagini , joc.imagini_mici, joc.imagini_medii, joc.id_joc, joc.este_joc from joc where 1=1"+conditie, function (err,rez){
+
+            res.render("pagini/jocuri",{produse:rez.rows, categorii:categorii.rows});
+        });
     });
 });
 
 application.get("/jocuri", function(req,res){
 
-    const results= client.query("select joc.developeri, joc.nume_joc, joc.pret, joc.descriere, joc.gen_joc, joc.reducere, joc.data_de_lansare , joc.imagini , joc.imagini_mici, joc.imagini_medii, joc.id_joc, joc.este_joc from joc order by joc.pret", function (err,rez){
-        console.log(rez.rows);
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
 
-        res.render("pagini/jocuri",{produse:rez.rows});
+        const results = client.query("select joc.developeri, joc.nume_joc, joc.pret, joc.descriere, joc.gen_joc, joc.reducere, joc.data_de_lansare , joc.imagini , joc.imagini_mici, joc.imagini_medii, joc.id_joc, joc.este_joc from joc order by joc.pret", function (err, rez) {
+            console.log(rez.rows);
+
+            res.render("pagini/jocuri", {produse: rez.rows, categorii: categorii.rows});
+        });
     });
-
 });
 
 
@@ -116,15 +128,22 @@ application.get("/data", function(req,res){
 
 
 application.get("/Account",function(req,res){
-    res.render("pagini/Account.ejs",{ip:req.connection.remoteAddress});
+
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
+
+        res.render("pagini/Account.ejs", {ip: req.connection.remoteAddress, categorii: categorii.rows});
+    });
 });
 
 
 application.get("/GalerieAnimata",function(req,res){
 
-    let vectorCai=verificaImagini()
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
 
-    res.render("pagini/GalerieAnimata.ejs",{imagini:vectorCai});
+        let vectorCai = verificaImagini()
+
+        res.render("pagini/GalerieAnimata.ejs", {imagini: vectorCai, categorii: categorii.rows});
+    });
 });
 
 
@@ -146,8 +165,10 @@ application.get("*/galerie-animata.css",function(req,res){
 
 
 application.get("/galerie",function(req,res){
-    let vectorCai=verificaImagini()
-    res.render("pagini/galerie.ejs",{imagini:vectorCai})
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
+        let vectorCai = verificaImagini()
+        res.render("pagini/galerie.ejs", {imagini: vectorCai, categorii: categorii.rows})
+    });
 });
 
 application.get("*/galerie.json",function(req,res){
@@ -155,28 +176,22 @@ application.get("*/galerie.json",function(req,res){
 });
 
 
-
-application.get("/galerie",function(){
-    verificaImagini();
-    res.render("pagini/galerie")
-});
-
-
-
 application.get("/*",function(req,res){
-    console.log(req.url)
-    res.render("pagini"+req.url,function (err,rezultatRender){
-        if(err){
-            if(err.message.includes("Failed to lookup view")){
-                res.status(404).render("pagini/ErrorPage")
+
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
+
+        console.log(req.url)
+        res.render("pagini" + req.url, {categorii: categorii.rows}, function (err, rezultatRender) {
+            if (err) {
+                if (err.message.includes("Failed to lookup view")) {
+                    res.status(404).render("pagini/ErrorPage")
+                } else {
+                    throw err;
+                }
+            } else {
+                res.send(rezultatRender);
             }
-            else{
-                throw err;
-            }
-        }
-        else{
-            res.send(rezultatRender);
-        }
+        });
     });
 });
 

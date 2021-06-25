@@ -37,21 +37,11 @@
                             <li>
                                 <a href="/jocuri">All games</a>
                             </li>
-                            <li>
-                                <a href="/jocuri/rpg">RPG</a>
-                            </li>
-                            <li>
-                                <a href="/jocuri/action">Action</a>
-                            </li>
-                            <li>
-                                <a href="/jocuri/shooter">Shooter</a>
-                            </li>
-                            <li>
-                                <a href="/jocuri/rouguelike">Rouguelike</a>
-                            </li>
-                            <li>
-                                <a href="/jocuri/equipment">Equipment</a>
-                            </li>
+                            <%for( let categorie of locals.categorii){%>
+                                <li>
+                                    <a href="/jocuri/<%- categorie.categ%>"><%- categorie.categ%></a>
+                                </li>
+                            <%}%>
                         </ul>
                     </li>
                 </ul>
