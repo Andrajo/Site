@@ -10,23 +10,19 @@
 <%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
 <body>
 <main>
-    <h2 id="Title"><%- locals.produse.nume_joc%></h2>
+    <h2 id="Title"><%- locals.produse.nume_joc%> <a id="Id">(Id product:<%- locals.produse.id_joc%>)</a></h2>
     <section class="joc_pogg">
-        <p id="id_joc">Id: <%- locals.produse.id_joc%></p>
-        <p id="nume_joc">Nume: <%- locals.produse.nume_joc%></p>
         <p id="descriere_joc">Descriere: <%- locals.produse.descriere%></p>
-        <p id="pret_joc">Price: <%- locals.produse.pret%>$</p>
-        <p id="data_joc">Data: <%- Date(locals.produse.data_de_lansare)%></p>
+        <p id="pret_joc">Buy <%-locals.produse.nume_joc%> for: <%- locals.produse.pret%>$  <a href="/"><button class="cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button></a></p>
+        <p id="data_joc"><%- Date(locals.produse.data_de_lansare)%></p>
         <p id="scor_joc">Score: <%- locals.produse.scor_joc%></p>
         <p id="ore">GamePlay Hours: <%- locals.produse.ore_de_gameplay%></p>
-        <p id="reducere">Sales: <%- locals.produse.reducere%></p>
-        <p id="restrictie">Age: <%- locals.produse.restrictie_de_varsta%></p>
+        <p id="restrictie">Age restriction for a safe use of the product: <%- locals.produse.restrictie_de_varsta%></p>
         <p id="premiu">Awards: <% if(locals.produse.premii_castigate==="Nimic"){%>;-;
                         <%}else{%>
                         <%- locals.produse.premii_castigate%>
                         <%}%></p>
         <p id="numar_pre">Number of awards: <%- locals.produse.numarul_premiilor%></p>
-        <p id="este_joc">Game?: <%- locals.produse.este_joc%></p>
         <p id="gen_joc">Genre: <%- locals.produse.gen_joc%></p>
         <p id="devs">Publishers: <%- locals.produse.developeri%></p>
         <div id="imagine_joc"><%- locals.produse.trailer%></div>

@@ -1,15 +1,13 @@
 main{
     margin: 0;
     padding: 0;
-}
-
-article{
+    padding-top: 20px;
 }
 
 .jocuri_pogg_service{
     width: 100%;
     position: absolute;
-    top:30%;
+    top:60%;
     left: 0;
     display: grid;
     text-align: left;
@@ -36,6 +34,7 @@ article{
     flex-direction: row;
     width: 600px;
     height: 350px;
+    opacity: 0.8;
     overflow: hidden;
     border-radius: 15px;
     padding: 5px;
@@ -47,11 +46,12 @@ article{
     'descriere descriere'
     'este_joc este_joc'
     'joc_id joc_id';
+    transition: .5s;
 }
 
 #Title{
     position: absolute;
-    top:20%;
+    top:45%;
     left: 47.5%;
     font-size: 30px;
 }
@@ -79,3 +79,52 @@ table tr{
 table tr:nth-child(even){background-color: var(--c5);}
 
 table .data:hover {background-color: var(--c4);}
+
+
+.jocuri_pogg:hover{
+    opacity: 1;
+}
+
+
+#filtrare button{
+    position: relative;
+    left: 0;
+}
+
+
+
+#search_filter{grid-area: search}
+#price_filter{grid-area: price}
+#award_filter{grid-area: award}
+#score_filter{grid-area: scor}
+#restrictie_filter{grid-area: restrictie}
+#descrition_filter{grid-area: description}
+#gameplay_filter{grid-area: game}
+#filtru{grid-area: filtru;height:30px;width: 70px;bottom: 0;}
+#sortCrescNume{grid-area: sortc;height:30px;width: 120px;bottom: 0;}
+#sortDescrescNume{grid-area: sortd;height:30px;width: 120px;bottom: 0;}
+#resetare{grid-area: resetare;height:30px;width: 110px;bottom: 0;}
+#suma{grid-area: suma;height:30px;width: 110px;bottom: 0;}
+
+
+#filtrare {
+    position: absolute;
+    display: grid;
+    grid-template-areas:
+    'search price award restrictie scor scor scor scor'
+    'description description game filtru sortc sortd suma resetare';
+    top: 13%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--c5);
+}
+
+#filtrare button{
+    background-color: var(--c4);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+#filtrare button:hover{
+    background-color: var(--c1);
+}

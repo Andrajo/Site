@@ -14,6 +14,9 @@ function toggle_light_mode() {
     var x=document.getElementsByClassName("jocuri_pogg");
     var soare=document.getElementById("soare");
     var luna=document.getElementById("luna");
+    var filtru=document.getElementById("filtrare");
+    var filtre=document.getElementsByClassName("filtre");
+    var butoane=document.getElementsByClassName("butoane_filtru");
     if (localStorage.lightMode === "dark") {
         localStorage.lightMode = "light";
         app.setAttribute("light-mode", "light");
@@ -23,7 +26,10 @@ function toggle_light_mode() {
         }
         soare.style.opacity=1;
         luna.style.opacity=0;
-
+        filtru.style.backgroundColor='#1C9FA6';
+        filtru.style.borderColor="#0B3D40";
+        filtre.style.color="#0B3D40";
+        butoane.style.backgroundColor="#23C4CC";
     } else {
         localStorage.lightMode = "dark";
         app.setAttribute("light-mode", "dark");
@@ -33,5 +39,9 @@ function toggle_light_mode() {
         }
         soare.style.opacity=0;
         luna.style.opacity=1;
+        filtru.style.backgroundColor='#0B3D40';
+        filtre.style.color="#ced4e2";
+        butoane.style.background="#167A80";
+        butoane.style.color="#ced4e2";
     }
 }

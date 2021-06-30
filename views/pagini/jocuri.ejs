@@ -11,7 +11,7 @@
 <%- include("../fragmente/header.ejs") %>   <!-- Intoarce rezultatul funtiei apelate, cazul asta include-->
 <body>
 <main>
-    <h2 id="Title">Games</h2>
+    <h2 id="Title" class="monstru balaur">Games</h2>
     <article class="articol">
         <section class="jocuri_pogg_service">
             <% for (let imag of locals.produse){%>
@@ -67,6 +67,79 @@
             <%}%>
         </section>
     </article>
+    <section id="filtrare">
+        <p  class="filtre" id="search_filter">
+            <label> Search:
+                <input id="i_text" type="text" value="">
+            </label>
+        </p>
+        <p  class="filtre" id="price_filter">
+            <label>
+                Price:
+                <em id="minrange" style="font-style: normal;">0</em>
+                <input id="i_range" type="range" min="0" max="400" step="1" value="399" oninput="document.getElementById('range').innerHTML = this.value;">
+                <em id="maxrange" style="font-style: normal;">400</em> (<em id="range" style="font-style: normal;"></em>)
+            </label>
+        </p>
+        <p id="award_filter"  class="filtre">  Awarded:
+
+            <label>Yes!
+                <input id="i_check1" name="gr_chck" value="true" type="checkbox"/>
+            </label>
+
+        </p>
+        <p  class="filtre" id="score_filter"> Game score:
+            <label>All
+                <input id="i_rad1" checked name="gr_rad" value="toate" type="radio"/>
+            </label>
+            <% for( let i=1;i<=10;i++) { %>
+
+                <label><%-i%>
+                    <input id="i_rad+<%i%>" name="gr_rad" value="<%- i%>" type="radio"/>
+                </label>
+            <%}%>
+        </p>
+        <p  class="filtre" id="restrictie_filter">
+            <label>Restrictions:
+                <select id="inp-categorie">
+                    <option value="0" selected>0</option>
+                    <option value="3" selected>3</option>
+                    <option value="7" selected>7</option>
+                    <option value="13" selected>13</option>
+                    <option value="16" selected>16</option>
+                    <option value="18" selected>18</option>
+                </select>
+            </label>
+        </p>
+
+        <br>
+
+        <p class="filtre" id="descrition_filter">
+            <label>Find in the description: <br/>
+                <textarea id="i_textarea" placeholder=" '+' keywords to look for, '-' ignored words"></textarea>
+            </label>
+        </p>
+
+        <p class="filtre" id="gameplay_filter">
+            <label>How many elements on the page:
+                <select id="i_sel_multiplu" multiple size="5">
+                    <option value="0-100" selected>All</option>
+                    <option value="0-5" >0-5</option>
+                    <option value="5-10" >5-10</option>
+                    <option value="10-15" >10-15</option>
+                    <option value="15-20" >15-20</option>
+                </select>
+            </label>
+
+        </p>
+        <button id="filtru" class="butoane_filtru">Filter</button>
+        <button id="sortCrescNume" class="butoane_filtru">Sort by name a-z</button>
+        <button id="sortDescrescNume" class="butoane_filtru">Sort by name z-a </button>
+        <button id="suma" class="butoane_filtru">Total </button>
+        <button id="resetare" class="butoane_filtru">Reset all filters</button>
+
+    </section>
+    <script src="resurse/style/filtrare.js"></script>
 </main>
 <div class="pagebreak"> </div>
 <script src="../../resurse/style/main.js"></script>

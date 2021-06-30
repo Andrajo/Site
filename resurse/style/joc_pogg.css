@@ -1,41 +1,52 @@
 main{
-    height: 500px;
+    height: 900px;
+    text-align: center;
 }
 
-#imagine_joc{grid-area: imagine;}
-#id_joc{grid-area: id;}
-#nume_joc{grid-area: nume;}
-#descriere_joc{grid-area: descriere;}
-#pret_joc{grid-area: pret;}
-#data_joc{grid-area: data;}
-#scor_joc{grid-area: scor;}
-#ore{grid-area: ore;}
-#reducere{grid-area: reducere;}
-#restrictie{grid-area: restrictie;}
-#premiu{grid-area: premiu;}
-#numar_pre{grid-area: nr_pre;}
-#este_joc{grid-area: este;}
-#gen_joc{grid-area: gen;}
-#devs{grid-area: devs;}
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#imagine_joc{grid-area: imagine;border: 2px solid black;border-radius: 5px; width: 800px;height: 400px;position:relative;top:3%;}
+#id_joc{grid-area: id;border: 2px solid black;border-radius: 5px;}
+#descriere_joc{grid-area: descriere;border: 2px solid black;border-radius: 5px;width: 71%;height: 180px;}
+#pret_joc{grid-area: pret;border: 2px solid black;border-radius: 5px; width: 49%;text-align: left;position: relative;left: 0;top:-60%;}
+#data_joc{grid-area: data;border: 2px solid black;border-radius: 5px;position: relative;right: 52%;top:-60%;width: 108%;}
+#scor_joc{grid-area: scor;border: 2px solid black;border-radius: 5px;width: 90%;position: relative;left: 30%;top:-60%;}
+#ore{grid-area: ore;border: 2px solid black;border-radius: 5px;position: relative;top:-60%;}
+#restrictie{grid-area: restrictie;border: 2px solid black;border-radius: 5px;width: 90%;position:relative;top:-60%;}
+#premiu{grid-area: premiu;border: 2px solid black;border-radius: 5px;width: 90%;position:relative;top:-60%;}
+#numar_pre{grid-area: nr_pre;border: 2px solid black;border-radius: 5px;width: 90%;position: relative; top:-60%;}
+#gen_joc{grid-area: gen;border: 2px solid black;border-radius: 5px; width: 46%;position:relative;left:10%;top:-60%;}
+#devs{grid-area: devs;border: 2px solid black;border-radius: 5px;width: 71%;height: 180px;position: relative;top:-17%;}
 
 .joc_pogg{
     position: absolute;
-    width: 100%;
+    width: 110%;
     height: 100%;
     top:25%;
     left:0;
     margin: 20px;
     display: grid;
     grid-template-areas:
-    'imagine imagine pret'
-    'imagine imagine gen'
-    'id nume descriere'
-    'data scor ore'
-    'reducere restrictie premiu'
-    'nr_pre este devs';
+    'imagine imagine descriere descriere descriere'
+    'imagine imagine devs devs devs'
+    'nr_pre premiu ore scor gen'
+    'restrictie pret pret pret data';
 }
 
 #Title{
     position: absolute;
     top:20%;
+}
+
+#Id{
+    font-size: 14px;
+}
+
+.cart{
+    position: relative;
+    height: 100%;
+    right: 0;
 }

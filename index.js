@@ -76,7 +76,6 @@ application.get(["/","/index"], function(req,res){
     client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii){
         console.log(categorii.rows);
         let vectorCai=verificaImagini()
-
         res.render("pagini/index.ejs",{imagini:vectorCai,ip:req.connection.remoteAddress, categorii:categorii.rows});
     });
 
@@ -172,7 +171,9 @@ application.get("/galerie",function(req,res){
 });
 
 application.get("*/galerie.json",function(req,res){
-    res.status(403).render("pagini/ErrorPageForbidden")
+    client.query("select unnest(enum_range( null::genuri)) as categ",function (req2,categorii) {
+        res.status(403).render("pagini/ErrorPageForbidden",{categorii: categorii.rows});
+    });
 });
 
 
